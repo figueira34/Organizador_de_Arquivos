@@ -6,10 +6,12 @@ path = askdirectory(title='Select a folder')
 files_list = os.listdir(path)
 
 places = {
-    "images": [".png", ".jpg"],
-    "spreadsheets": [".xlsx"],
+    "images": [".png", ".jpg", ".jpeg"],
+    "spreadsheets": [".xlsx", ".xls", ".xlsm", ],
     "pdf": [".pdf"],
     "csv": [".csv"],
+    "power bi": [".pbix"],
+    "word": [".doc", ".docm", ".docx"]
 }
 
 for file in files_list:
@@ -19,3 +21,4 @@ for file in files_list:
             if not os.path.exists(f"{path}/{folder}"):
                 os.mkdir(f"{path}/{folder}")
             os.rename(f"{path}/{file}",(f"{path}/{folder}/{file}"))
+
